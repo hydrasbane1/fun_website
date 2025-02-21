@@ -1,7 +1,13 @@
 body{}
-#titleBar{}
-#sideBar{}
-#mainText{}
+#titleBar{
+	background:yellow;
+}
+#sideBar{
+	background:blue;
+}
+#mainText{
+	background:orange;
+}
 #subtitleTest{
 	color: red;
 }
