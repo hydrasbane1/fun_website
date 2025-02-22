@@ -1,11 +1,26 @@
-body{}
+body{
+	background-image: url("./pictures/blood_background_02.jpg");
+}
+#containerB{
+	background-image: url("./pictures/blood_background_02.jpg");
+	height:1000px;
+	width: 100%;
+}
 #titleBar{
+	width: 100%;
+	max-height: 200px;
+	min-height: 50px;
 	background:yellow;
 }
 #sideBar{
+	float:left;
+	width:15%;
 	background:blue;
+	height:1000px;
 }
 #mainText{
+	float:right;
+	width:85%;
 	background:orange;
 }
 #subtitleTest{
