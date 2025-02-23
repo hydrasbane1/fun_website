@@ -1,27 +1,101 @@
+@font-face{
+	font-family:Tzmice;
+	src:url("../Fonts/Goudy Text MT Lombardic Capital Regular.otf");
+}
 body{
-	background-image: url("./pictures/blood_background_02.jpg");
+	background-image: url("../pictures/blood_background_02.jpg");
 }
-#containerB{
-	background-image: url("./pictures/blood_background_02.jpg");
-	height:1000px;
-	width: 100%;
+div{
+	background:darkred;
+	border: 3pt solid black;
+	margin:0px;
 }
+H2{
+	font-family: Tzmice;
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+
+#menuBar{
+	max-height:100px;
+	min-height:50px;
+	padding:0px;
+}
+#menuBar li{
+	max-height:100px;
+	min-height:50px;
+	margin:0px;
+	max-width: 10%;
+	min-width:100px;
+	font-size:24px;
+	display:inline-block;
+	border: 1pt solid black;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+#menuBar a{
+
+}
+#menuBar ul{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+
 #titleBar{
 	width: 100%;
 	max-height: 200px;
 	min-height: 50px;
-	background:yellow;
+	padding-bottom: 5px;
+	font-family: Tzmice;
+	font-size: 30pt;
+	margin:0px;
 }
+#titleBar H1{
+	padding:0px;
+	margin:0px;
+}
+
+
 #sideBar{
 	float:left;
 	width:15%;
-	background:blue;
 	height:1000px;
+	padding:0px;
+	margin:0px;
+	min-width:150px;
+	border-top-style:none;
 }
+#sideBar ul{
+	list-style:circle inside url("../pictures/sabbat2.png");
+	padding:0px;
+	margin:0px;
+}
+#sideBar li{
+	max-width:100%;
+	border: 1pt solid black;
+	height: 60px;
+	font-size:30px;
+	position:relative;
+}
+#sideBar a{
+	margin-bottom:10px;
+	position:relative;
+}
+
+
 #mainText{
 	float:right;
-	width:85%;
-	background:orange;
+	max-width:82%;
+	min-width:50%;
+	border: 3pt none black;
+	background: none;
+}
+#mainText div{
+	margin-top:20px;
 }
 #subtitleTest{
 	color: red;
