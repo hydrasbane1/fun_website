@@ -47,11 +47,13 @@ a{
 
 #titleBar{
 	width: 100%;
-	max-height: 200px;
+	max-height: 100px;
+	min-height: 50px;
 	padding-bottom: 5px;
 	font-family: Tzmice;
 	font-size: 30pt;
 	margin:0px;
+	overflow:hidden;
 }
 #titleBar H1{
 	padding:0px;
