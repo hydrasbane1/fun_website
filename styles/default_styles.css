@@ -5,12 +5,15 @@
 	src:url("../Fonts/Goudy Text MT Lombardic Capital Regular.otf");
 }
 body{
-	background-color: brown;
+	background-color: #552200;
+	padding-right:100px;
+	padding-left:100px;
 }
 div{
 	border: 3pt solid black;
 	margin:0px;
-	background-color: green;
+	background-color: #006600;
+	padding: 20px;
 }
 H2{
 	font-family: Tzmice;
@@ -18,9 +21,6 @@ H2{
 a{
 	text-decoration: none;
 	color:black;
-}
-p {
-	color:red;
 }
 .login{
 	border-style:solid;
@@ -70,16 +70,21 @@ p {
 	float:left;
 }
 
-
+#MainContent{
+	display:inline-block;
+	padding:0px;
+	background:none;
+}
 
 #sideBar{
-	float:left;
+	display:inline-block;
 	width:15%;
-	height:1000px;
-	padding:0px;
+	height:inherit;
+	padding:0px 0px 0px 0px;
 	margin:0px;
 	min-width:150px;
 	border-top-style:none;
+	border: 3pt solid red;
 }
 #sideBar ul{
 	list-style:circle inside url("../pictures/sabbat2.png");
@@ -100,17 +105,25 @@ p {
 
 
 #mainText{
-	float:right;
-	width:82%;
-	min-width:50%;
-	border: 3pt none black;
+	display:inline-block;
+	width:75%;
+	min-width:100px;
+	border: 3pt solid red;
 	background: none;
+	padding-right:0px;
+	padding-left:0px;
 }
 #mainText div{
 	margin-top:20px;
-	width:100%;
+	width:calc(100% - padding - 3px);
+	float: top;
 	display:block;
 }
-#subtitleTest{
-	color: red;
+@media screen and (max-width: 1000px) {
+  #sideBar {
+    visibility:collapse;
+  }
+  #mainText {
+    width:100%;
+  }
 }

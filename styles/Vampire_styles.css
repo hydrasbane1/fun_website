@@ -6,16 +6,26 @@ body{
 	background-image: url("../pictures/blood_background_02.jpg");
 }
 div{
-	background:darkred;
+	background-color:#420018;
 	border: 3pt solid black;
 	margin:0px;
 }
+H1{
+	color:#FFCCCC;
+}
 H2{
 	font-family: Tzmice;
+	color:#FFCCCC;
+}
+H3{
+	color:#FFCCCC;
 }
 a{
 	text-decoration: none;
-	color:black;
+	color:#FFCCCC;
+}
+p{
+	color:#FFCCCC;
 }
 
 #menuBar{
@@ -42,6 +52,9 @@ a{
 	list-style:none;
 	margin:0px;
 	padding:0px;
+}
+#menuBar ul li {
+	text-align:center;
 }
 
 

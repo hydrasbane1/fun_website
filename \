@@ -5,13 +5,13 @@
 </head>
 <body>
 	<div id="titleBar">
-		<H1>Vampire the masqurade</H1>
+		<H1>Vampire the masqurade BUT IN PHP!!!</H1>
 	</div>
 	<div id="menuBar">
 		<ul>
 			<li><a href = "./index.html">home</a></li>
 			<li><a href = "trippjohnson.net">portfolio</a></li>
-			<li><a href = "./VampireFanPagePHP.php">new test page</a></li>
+			<li><a href = "./VampireFanPage.html">Origional page</a></li>
 			<li><a href = "">option4</a></li>
 		</ul>
 	</div>
@@ -33,6 +33,14 @@
 			<H2 id="subtitleTest">I am testing the picture capability</H2>
 			<img url = ./pictures/blood_background_02.jpg></img>
 		</div>
-		
+		<div>
+<?php
+			echo'
+			<H2 id ="subtitleTest">This is created with PHP</H2>
+			<p>this is a paragraph made with PHP</p>
+			';			
+?>
+		</div>
+
 	</div>
 </body>
