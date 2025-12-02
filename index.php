@@ -1,25 +1,25 @@
 <?php
 session_start();
-if($_SESSION['userID'] == null){
-	$_SESSION['userID'] = -1;
-}
+require('LoginModel.php');
+$LM = new LoginModel();
+$Userlist = $LM->getUserByID($_SESSION['userID']);
+$User = $Userlist[0];
+//if($_SESSION['userID'] == null){
+//	$_SESSION['userID'] = -1;
+//}
 
 ?>
-<!DOCTYPE html>i
+<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" href="../styles/default_styles.css">
 		<script type="text/javascript" src="../js/index.js"></script>
+		<meta http-equiv="Cache-Control" content="no-store"/>
 	</head>
 	<body>
 		<div id=titleBar>
 			<H1>Hydra's Rest</H1>
-			<form class="login">
-				<label for="uname">username: </label>
-				<input type="text" id="uname"></input><br>
-				<label for="pword">password: </label>
-				<input type="text" id="pword"></input>
-			</form> 
+			<iframe class = "login" src = "loginPage.php"></iframe>
 		</div>
 
 
@@ -56,7 +56,9 @@ if($_SESSION['userID'] == null){
 				</div>
 				<div>
 					<H3>here is your user ID</H3>
-					<p>this is your user ID <?php echo($_SESSION['userID']) ?></p>
+					<p>your user ID is: <?php echo($_SESSION['userID'])?></p>
+					<p>your name is: <?php echo($User[1]);?>
+					</p>
 				</div>
 			
 			</div>

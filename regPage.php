@@ -32,9 +32,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			<button type="submit">Create Account</button>
 		</form>
 	</div>
-	<div>
-		<h3>this is a test div</h3>
-		<p>this is a test div to make sure that things dont just dissapear when the form is sent</p>
-	</div>
 </body>
 </html>
