@@ -8,6 +8,7 @@ body{
 	background-color: #552200;
 	padding-right:100px;
 	padding-left:100px;
+	height:1000px;
 }
 div{
 	border: 3pt solid black;
@@ -28,7 +29,8 @@ a{
 	padding:0px;
 	margin:0px;
 	font-size: 16pt;
-	height:50px;
+	height:100px;
+	width:400px;
 }
 
 
@@ -37,6 +39,7 @@ a{
 	font-size: 30pt;
 	display:block;
 	overflow:hidden;
+	/*width:100%;*/
 }
 #titleBar H1{
 	float:left;
@@ -49,6 +52,7 @@ a{
 #menuBar{
 	height:50px;
 	padding:0px;
+	width:100%;
 }
 #menuBar li{
 	height: 50px;
@@ -74,17 +78,20 @@ a{
 	display:inline-block;
 	padding:0px;
 	background:none;
+	width:100%;
+	height:600px;
 }
 
 #sideBar{
 	display:inline-block;
+	float:left;
 	width:15%;
-	height:inherit;
+	height:100%;
 	padding:0px 0px 0px 0px;
 	margin:0px;
 	min-width:150px;
 	border-top-style:none;
-	border: 3pt solid red;
+	border: 3pt solid purple;
 }
 #sideBar ul{
 	list-style:circle inside url("../pictures/sabbat2.png");
@@ -103,10 +110,10 @@ a{
 	position:relative;
 }
 
-
 #mainText{
 	display:inline-block;
-	width:75%;
+	float:right;
+	width:calc(min(100% - 150px,85%) - 17px);
 	min-width:100px;
 	border: 3pt solid red;
 	background: none;
@@ -122,8 +129,13 @@ a{
 @media screen and (max-width: 1000px) {
   #sideBar {
     visibility:collapse;
+    height:0;
   }
   #mainText {
     width:100%;
+  }
+  body{
+  	padding-right:0px;
+		padding-left:0px;
   }
 }

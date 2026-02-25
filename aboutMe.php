@@ -6,30 +6,17 @@
 	</head>
 	<body>
 		<div id=titleBar>
-			<H1><a href = index.html>Hydra's Rest</a></H1>
-			<form class="login">
-				<label for="uname">username: </label>
-				<input type="text" id="uname"></input><br>
-				<label for="pword">password: </label>
-				<input type="text" id="pword"></input>
-			</form> 
+			<H1><a href = index.php>Hydra's Rest</a></H1>
+			<div class = "login">
+				
+			</div>
 		</div>
 
-		<?php 
-			include 'navbar.php'; 
-		?>
+		<?php include 'Menubar.php'; ?>
 
 		<div id=MainContent>
 			
-			<div id=sideBar>
-				<ul>
-					<li><a href="">thing 1</a></li>
-					<li><a href="">thing 2</a></li>
-					<li><a href="">thing 3</a></li>
-					<li><a href="">thing 4</a></li>
-					<li><a href="">thing 5</a></li>
-				</ul>
-			</div>
+			<?php include "Sidebar.php" ?>
 
 			<div id="mainText">
 				<div>

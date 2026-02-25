@@ -2,11 +2,12 @@
 session_start();
 require('LoginModel.php');
 $LM = new LoginModel();
+if($_SESSION['userID'] == null){
+	$_SESSION['userID'] = -1;
+}
 $Userlist = $LM->getUserByID($_SESSION['userID']);
 $User = $Userlist[0];
-//if($_SESSION['userID'] == null){
-//	$_SESSION['userID'] = -1;
-//}
+
 
 ?>
 <!DOCTYPE html>
@@ -19,31 +20,17 @@ $User = $Userlist[0];
 	<body>
 		<div id=titleBar>
 			<H1>Hydra's Rest</H1>
-			<iframe class = "login" src = "loginPage.php"></iframe>
+			<div class = "login">
+				
+			</div>
 		</div>
 
 
-		<div id=menuBar >
-			<ul>
-				<li><a href="VampireFanPage.html">vtm fan page</a></li>
-				<li><a href="3DTesting.html">3D testing</a></li>
-				<li><a href="aboutMe.php">about me!</a></li>
-				<li><a href="regPage.php">create Account</a></li>
-			</ul>
-
-		</div>
+		<?php include "Menubar.php"?>
 
 		<div id=MainContent>
 			
-			<div id=sideBar>
-				<ul>
-					<li><a href="">thing 1</a></li>
-					<li><a href="">thing 2</a></li>
-					<li><a href="">thing 3</a></li>
-					<li><a href="">thing 4</a></li>
-					<li><a href="">thing 5</a></li>
-				</ul>
-			</div>
+			<?php include "Sidebar.php" ?>
 
 			<div id="mainText">
 				<div>

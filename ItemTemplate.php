@@ -1,0 +1,10 @@
+<?php
+Function($title,$body){
+	echo(
+		"<div>
+			<H3>$title</H3>
+			</p>$body</p>
+		</div>"
+	);
+}
+?>

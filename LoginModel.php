@@ -31,14 +31,17 @@ class LoginModel{
 		}
 		return($output);
 	}
-
+// get UserByID returns a 2 dimentional array which contains the list of 
 	public function getUserByID($ID){
+		if ($ID == null or $ID == -1){
+			return(array(array("none","none")));
+		}
 		global $pdo;
 		$sql = "SELECT * FROM users WHERE user_id=?";
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute([$ID]);
 		$output = $stmt->fetchAll();
-		error_log($output[1] . "\n",3,"logging.log");
+		error_log($output[0] . "\n",3,"logging.log");
 		return($output);
 	}
 
