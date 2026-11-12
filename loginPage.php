@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$loginModel = new LoginModel();
 	$output = $loginModel->checkUser($username, $password);
 	$_SESSION['userID'] = $output;
-	header('Location: loginPage.php');
+	header('Location: User_Info.php');
 	exit();
 }
 ?>

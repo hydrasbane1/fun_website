@@ -5,6 +5,6 @@
 	//$user = 'Fun_Website_User';
 	//$user = jjohnson;
 	$user = 'postgres';
-	$password = 'mechanic';
+	$password = 'mechanic1';
 
 ?>

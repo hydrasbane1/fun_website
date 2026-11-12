@@ -1,12 +1,38 @@
 <?PHP
 $pdo = require 'DB.php';
 class LoginModel{
-	public function createUser($username, $password, $email){
+	public function createUser($username, $password, $email, $profile){
 		global $pdo;
-		$sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
+		$target_dir = "User_pictures/";
+		if($profile != Null){
+			$target_file = $target_dir . basename($profile["ProfileP"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+			$check = getimagesize($profile["ProfileP"]["tmp_name"]);
+			if($check !== false){
+				$uploadOk = 1;
+			} else {
+				$uploadOk = 0;
+			}
+			if(file_exists($target_file)){
+				$uploadOk = 0;
+			}
+			if($profile["ProfileP"]["size"]>500000){
+				$uploadOk = 0;
+			}
+			if ($uploadOk == 0){
+			} else {
+				if(move_uploaded_file($profile["ProfileP"]["tmp_name"],$target_file)){
+				} else {
+				}
+			}
+			
+		}else{
+		}
+		$sql = "INSERT INTO users (username, password, email, img_url) VALUES (?, ?, ?, ?)";
 		$hashPass = Hash("sha512",$password);
 		$stmt = $pdo->prepare($sql);
-		$stmt->execute([$username, $hashPass, $email]);
+		$stmt->execute([$username, $hashPass, $email, $target_file]);
 	}
 
 	public function checkUser($username, $password){
@@ -45,13 +71,18 @@ class LoginModel{
 		return($output);
 	}
 
-/*
-	public function updateUserEmail($username, $password,$newEmail){
+
+	public function updateUserEmail($ID,$newEmail){
+		global $pdo;
+		$sql = "UPDATE users SET email = ? WHERE user_id =?";
+		$stmt->execute([$newEmail,$ID]);
 	}
-	public function updateUserPassword($username, $password, $newPassword){
+	public function updateUserPassword($ID, $newPassword){
+		global $pdo;
+		$sql = "UPDATE users SET email = ? WHERE user_id =?";
+		$stmt->execute([$newPassword,$ID]);
 	}
 	public function deleteUser($username,$password){
 	}
-*/
 }
 ?>

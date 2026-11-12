@@ -21,7 +21,7 @@ $User = $Userlist[0];
 		<div id=titleBar>
 			<H1>Hydra's Rest</H1>
 			<div class = "login">
-				
+				<?php include "loginPage.php"?>
 			</div>
 		</div>
 
