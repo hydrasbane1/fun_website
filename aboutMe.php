@@ -12,11 +12,11 @@
 			</div>
 		</div>
 
-		<?php include 'Menubar.php'; ?>
+		<?php include($_SERVER["DOCUMENT_ROOT"].'PhP_modules/Menubar.php'); ?>
 
 		<div id=MainContent>
 			
-			<?php include "Sidebar.php" ?>
+			<?php include($_SERVER["DOCUMENT_ROOT"]."PhP_modules/Sidebar.php") ?>
 
 			<div id="mainText">
 				<div>

@@ -18,5 +18,5 @@ function connect(string $host, string $db, string $user, string $password): PDO
 	}
 }
 
-return connect($host, $blogDB, $user, $password);
+return connect($host, $db, $user, $password);
 ?>

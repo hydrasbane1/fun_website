@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('LoginModel.php');
+require($SERVER["DOCUMENT_ROOT"]."PhP_modules/LoginModel.php");
 $LM = new LoginModel();
 if($_SESSION['userID'] == null){
 	$_SESSION['userID'] = -1;
@@ -21,16 +21,16 @@ $User = $Userlist[0];
 		<div id=titleBar>
 			<H1>Hydra's Rest</H1>
 			<div class = "login">
-				<?php include "loginPage.php"?>
+				<?php include($SERVER["DOCUMENT_ROOT"]."PhP_modules/loginPage.php")?>
 			</div>
 		</div>
 
 
-		<?php include "Menubar.php"?>
+		<?php include($SERVER["DOCUMENT_ROOT"]."PhP_modules/Menubar.php")?>
 
 		<div id=MainContent>
 			
-			<?php include "Sidebar.php" ?>
+			<?php include($SERVER["DOCUMENT_ROOT"]."PhP_modules/Sidebar.php")?>
 
 			<div id="mainText">
 				<div>
@@ -46,6 +46,10 @@ $User = $Userlist[0];
 					<p>your user ID is: <?php echo($_SESSION['userID'])?></p>
 					<p>your name is: <?php echo($User[1]);?>
 					</p>
+				</div>
+				<div>
+					<H3>here is the URL file path</H3>
+					<p>your file path is: <?php echo($_SERVER['REQUEST_URI']);?></p>
 				</div>
 			
 			</div>

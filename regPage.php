@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'LoginModel.php';
+require_once($_SERVER["DOCUMENT_ROOT"].'PhP_modules/LoginModel.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $_POST['username'];
