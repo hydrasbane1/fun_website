@@ -1,15 +1,4 @@
-<?php
-session_start();
-require($SERVER["DOCUMENT_ROOT"]."PhP_modules/LoginModel.php");
-$LM = new LoginModel();
-if($_SESSION['userID'] == null){
-	$_SESSION['userID'] = -1;
-}
-$Userlist = $LM->getUserByID($_SESSION['userID']);
-$User = $Userlist[0];
-
-
-?>
+<?php include($_SERVER["DOCUMENT_ROOT"].'/PhP_modules/SessionHandler.php');?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,18 +8,18 @@ $User = $Userlist[0];
 	</head>
 	<body>
 		<div id=titleBar>
-			<H1>Hydra's Rest</H1>
+			<a href="index.php"><H1>Hydra's Rest</H1></a>
 			<div class = "login">
-				<?php include($SERVER["DOCUMENT_ROOT"]."PhP_modules/loginPage.php")?>
+				<?php include($_SERVER["DOCUMENT_ROOT"]."/PhP_modules/loginPage.php")?>
 			</div>
 		</div>
 
 
-		<?php include($SERVER["DOCUMENT_ROOT"]."PhP_modules/Menubar.php")?>
+		<?php include($_SERVER["DOCUMENT_ROOT"]."/PhP_modules/Menubar.php")?>
 
 		<div id=MainContent>
 			
-			<?php include($SERVER["DOCUMENT_ROOT"]."PhP_modules/Sidebar.php")?>
+			<?php include($_SERVER["DOCUMENT_ROOT"]."/PhP_modules/Sidebar.php")?>
 
 			<div id="mainText">
 				<div>
@@ -38,18 +27,19 @@ $User = $Userlist[0];
 					</p>Sit down, take a rest! this is a site I created to have a fun website I can mess with an modify so the place may change a bit but thats a part of the fun! take a look at my "about me" if you would like to know more!</p>
 				</div>
 				<div>
-					<H3>this is for the old default page</H3>
-					<a href="default_page.html">this is a link to a default page</a>
-				</div>
-				<div>
 					<H3>here is your user ID</H3>
-					<p>your user ID is: <?php echo($_SESSION['userID'])?></p>
+					<p>your user ID is: <?php echo($User[0]);?></p>
 					<p>your name is: <?php echo($User[1]);?>
 					</p>
 				</div>
 				<div>
 					<H3>here is the URL file path</H3>
-					<p>your file path is: <?php echo($_SERVER['REQUEST_URI']);?></p>
+					<p>your file path is: 
+						<?php foreach($_SESSION as $x => $y){
+							echo "$x: $y <br>";
+						}
+						?>
+					</p>
 				</div>
 			
 			</div>
